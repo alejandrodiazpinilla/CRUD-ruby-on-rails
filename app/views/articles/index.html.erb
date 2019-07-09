@@ -1,0 +1,18 @@
+<h1>Lista de articulos</h1>
+<table>
+    <tr>
+            <th>id </th>
+            <th>title </th>
+            <th>created at</th>
+        
+    </tr>
+    <% @articles.each do |article|%>
+        <tr>
+            <th><%= article.id %> </th>
+            <th><%= link_to article.title, article %> </th>
+            <th><%= article.created_at%></th>
+        </tr>
+    <% end %>
+</table>
+
+<%=  link_to  "crear nuevo", new_article_url %>

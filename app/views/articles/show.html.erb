@@ -1,0 +1,8 @@
+<h1><%= @article.id%>-<%= @article.title%></h1>
+<p> <%= @article.description%></p>
+<%= link_to "editar", edit_article_path(@article) %>
+<%= link_to 'eliminar', 
+             article_path(@article), 
+                         method: :delete, 
+                         data: { confirm: 'Are you sure?' } %>
+<%= link_to  "regresar home", root_url %>
