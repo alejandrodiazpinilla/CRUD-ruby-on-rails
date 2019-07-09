@@ -13,8 +13,12 @@ class ArticlesController < ApplicationController
 
   def create
     article = Article.new(article_params)
-    article.save
+    if article.save
     redirect_to  article
+    else  
+      flash[:errors] = article.errors.messages
+      redirect_to new_article_path
+    end
   end
 
   def edit
